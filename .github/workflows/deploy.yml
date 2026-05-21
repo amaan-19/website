@@ -33,7 +33,7 @@ jobs:
       - name: Upload to Deno Deploy
         uses: denoland/deployctl@v1
         with:
-          project: amaan-19/personal-website
+          project: amaan-19/website
           entrypoint: server/entry.mjs
           root: dist
         env:

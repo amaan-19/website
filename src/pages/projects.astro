@@ -1,8 +1,11 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ProjectPost from '../components/ProjectPost.astro';
+const allPosts = Object.values(import.meta.glob('./project_posts/*.md', { eager: true }));
 const pageTitle = "amaan khan | projects";
 ---
 <BaseLayout pageTitle={pageTitle}>
-
+  <ul>
+    {allPosts.map((post: any) => <ProjectPost url={post.url} title={post.frontmatter.title} />)}
+  </ul>
 </BaseLayout>

@@ -164,10 +164,7 @@ a:hover {
   display: none;
 }
 
-@media screen and (width >= 641px) and (width < 1008px) {
-
-}
-
+/* Responsive design for screens smaller than 641px */
 @media screen and (width < 641px) {
   .page-grid {
     flex-direction: column;

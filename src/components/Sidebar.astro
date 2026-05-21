@@ -8,7 +8,7 @@ import "../styles/global.css";
 const { pageTitle } = Astro.props;
 ---
 <div class="sidebar">
-    <Image src={headshot} alt="Amaan's headshot" quality={100} class="profile-pic" />
+    <Image src={headshot} alt="Amaan's headshot" quality={100} class="profile-pic" loading="eager" fetchpriority="high"/>
     <Header />
     <Footer />
 </div>

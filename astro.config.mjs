@@ -1,12 +1,10 @@
-// @ts-check
 import { defineConfig } from 'astro/config';
-import deno from '@deno/astro-adapter';
+import vercel from '@astrojs/vercel';
 import preact from '@astrojs/preact';
 
-// https://astro.build/config
 export default defineConfig({
   output: 'server',
-  adapter: deno(),
+  adapter: vercel(),
   site: 'https://amaankhan.info',
   integrations: [preact()]
 });

@@ -1,0 +1,14 @@
+---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { Image } from "astro:assets";
+import headshot from "../assets/headshot.png";
+import "../styles/global.css"; 
+
+const { pageTitle } = Astro.props;
+---
+<div class="sidebar">
+    <Image src={headshot} alt="Amaan's headshot" quality={100} class="profile-pic" />
+    <Header />
+    <Footer />
+</div>

@@ -1,11 +1,20 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const pageTitle = "amaan khan | about";
 ---
-
-<Layout>
-	<Welcome />
-</Layout>
+<BaseLayout pageTitle={pageTitle}>
+	<p>
+		i am currently a master's student studying computer engineering at washu (in st. louis). i also completed my undergrad
+		at washu, where i majored in computer science. broadly, my research interests lie in creating safe and robust cyber-physical 
+		autonomous systems. i've had the privilege of exploring these interests deeply through my involvement in 
+		<a href="https://engineering.washu.edu/faculty/Hussein-Sibai.html">prof. hussein sibai's</a> research group, where i have primarily 
+		focused on developing novel conformal perception contracts for occupancy-based safe planning in autonomous driving settings.
+	</p>
+	<p>
+		<i>
+			this website was written in <a href="https://astro.build/">astro</a> and deployed on github pages with a custom domain. here's the 
+			<a href="https://github.com/amaan-19/website">source code</a> if you're interested.
+		</i>
+	</p>
+</BaseLayout>

@@ -1,0 +1,28 @@
+---
+import Sidebar from "../components/Sidebar.astro";
+
+const { pageTitle } = Astro.props;
+---
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Mono:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{pageTitle}</title>
+  </head>
+  <body>
+    <div class="page-grid">
+      <Sidebar pageTitle={pageTitle} />
+    <div id="main-content" class="main-content">
+      <slot />
+    </div>
+    <script>
+      import "../scripts/menu";
+      import "../scripts/content-resizer";
+    </script>
+  </body>
+</html>

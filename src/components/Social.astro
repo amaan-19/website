@@ -1,0 +1,4 @@
+---
+const { platform, username, isEmail } = Astro.props;
+---
+<a href={isEmail ? `mailto:${username}` : `https://www.${platform}.com/${username}`} target='_blank'>{platform} </a>

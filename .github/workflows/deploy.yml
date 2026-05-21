@@ -35,5 +35,4 @@ jobs:
         with:
           project: personal-website
           entrypoint: dist/server/entry.mjs
-        env:
-          DENO_DEPLOY_TOKEN: ${{ secrets.DENO_DEPLOY_TOKEN }}
+          root: dist

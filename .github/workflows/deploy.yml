@@ -35,5 +35,6 @@ jobs:
         with:
           project: amaan-19/website
           entrypoint: dist/server/entry.mjs
+          root: .
         env:
           DENO_DEPLOY_TOKEN: ${{ secrets.DENO_DEPLOY_TOKEN }}

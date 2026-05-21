@@ -33,9 +33,8 @@ jobs:
       - name: Upload to Deno Deploy
         uses: denoland/deployctl@v1
         with:
-          project: personal-website
+          project: amaan-19/personal-website
           entrypoint: server/entry.mjs
           root: dist
         env:
           DENO_DEPLOY_TOKEN: ${{ secrets.DENO_DEPLOY_TOKEN }}
-          

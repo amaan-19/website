@@ -1,10 +1,12 @@
 import { defineConfig } from 'astro/config';
 import vercel from '@astrojs/vercel';
-import preact from '@astrojs/preact';
 
 export default defineConfig({
   output: 'server',
-  adapter: vercel(),
+  adapter: vercel({
+    webAnalytics: {
+      enabled: true, 
+    },
+  }),
   site: 'https://amaankhan.info',
-  integrations: [preact()]
 });

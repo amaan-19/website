@@ -25,6 +25,11 @@ const { pageTitle } = Astro.props;
       <slot />
     </div>
     <script>
+      window.addEventListener('pageshow', (event) => {
+        if (event.persisted) {
+          window.location.reload();
+        }
+      });
       import "../scripts/menu";
       import "../scripts/content-resizer";
     </script>

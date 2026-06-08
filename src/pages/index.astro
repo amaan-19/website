@@ -1,7 +1,5 @@
 ---
-import { BaseSchema } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
-
 const pageTitle = "about";
 ---
 <BaseLayout pageTitle={pageTitle}>
@@ -24,9 +22,5 @@ const pageTitle = "about";
 		i wrote this website in <a href="https://astro.build/" target="_blank">astro</a> and deployed it on <a href="https://vercel.com/" target="_blank">vercel</a>; it's been
 		a fun and pragmatic way to pick up some web development skills. here's the <a href="https://github.com/amaan-19/website" target="_blank">source code</a> if you're interested!
 	</p>
-	<p>
-		<i>
-			last updated: june 2026
-		</i>
-	</p>
+	<p><em>last updated: june 2026</em></p>
 </BaseLayout>

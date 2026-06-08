@@ -1,11 +1,19 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import ProjectPost from '../components/ProjectPost.astro';
-const allPosts = Object.values(import.meta.glob('./project_posts/*.md', { eager: true }));
-const pageTitle = "amaan khan | projects";
+import ProjectPost from "../components/ProjectPost.astro";
+const allProjects = Object.values(import.meta.glob('./projects/*.md', { eager: true }));
+const pageTitle = "projects";
 ---
 <BaseLayout pageTitle={pageTitle}>
-  <ul>
-    {allPosts.map((post: any) => <ProjectPost url={post.url} title={post.frontmatter.title} />)}
-  </ul>
+  <div class="projects-grid">
+    {allProjects.map((project: any) => (
+      <ProjectPost
+        url={project.url}
+        title={project.frontmatter.title}
+        description={project.frontmatter.description}
+        year={project.frontmatter.year}
+        tags={project.frontmatter.tags}
+      />
+    ))}
+  </div>
 </BaseLayout>

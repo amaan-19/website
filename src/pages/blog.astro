@@ -2,7 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import BlogPost from '../components/BlogPost.astro';
 const allPosts = Object.values(import.meta.glob('./blog_posts/*.md', { eager: true })).reverse();
-const pageTitle = "amaan khan | blog";
+const pageTitle = "blog";
 ---
 <BaseLayout pageTitle={pageTitle}>
   <ul class="blog-post-list">

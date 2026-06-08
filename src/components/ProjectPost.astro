@@ -1,0 +1,13 @@
+---
+const { title, url } = Astro.props;
+---
+
+<li class="card">
+    <a href={url}>{title}</a>
+    <p class="blog-post-description">{Astro.props.description}</p>
+    <div class="card-tags">
+        {Astro.props.tags?.map((tag: string) => (
+            <span class="tag">{tag}</span>
+        ))}
+    </div>
+</li>

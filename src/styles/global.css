@@ -4,6 +4,7 @@
   --accent-color: #636B2F;
   --text-color: #66615E;
   --link-color: #BAC095;
+  --border-color: #C9C8C7;
 }
 
 html {
@@ -189,8 +190,13 @@ a:hover {
   animation-duration: 0.5s;
   animation-timing-function: ease-out;
   animation-fill-mode: forwards;
-  animation-delay: 0.4s;
+  animation-delay: 0.5s;
   opacity: 0;
+}
+
+.main-content h1 {
+  font-size: x-large;
+  font-weight: 300;
 }
 
 .blog-post-list {
@@ -202,10 +208,11 @@ a:hover {
 .blog-post-list li {
   padding-top: 1rem;
   padding-bottom: 1rem;
+  border-bottom: 0.5px solid var(--border-color);
 }
 
 .blog-post-list a {
-  font-size: x-large;
+  font-size: large;
 }
 
 .blog-post-list a:hover {
@@ -224,6 +231,52 @@ a:hover {
   display: none;
 }
 
+.projects-grid {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 2rem;
+}
+
+.cards { 
+  display: grid; 
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
+  gap: 16px; 
+}
+
+.card { 
+  border: 0.5px solid var(--border-color); 
+  border-radius: 8px; 
+  padding: 1.25rem 1rem; 
+  display: flex; 
+  flex-direction: column; 
+  gap: 10px; 
+  transition: border-color 0.2s; 
+  border-color: var(--border-color);
+}
+
+.card:hover { border-color: var(--accent-color); }
+
+.card-tags { 
+  display: flex; 
+  flex-wrap: wrap; 
+  gap: 5px; 
+  margin-top: auto; 
+  padding-top: 8px; 
+  border-top: 0.5px 
+  solid var(--border-color); 
+}
+
+.tag { 
+  font-size: 10px; 
+  color: var(--accent-color); 
+  letter-spacing: 0.05em; 
+  border: 0.5px solid var(--border-color); 
+  padding: 2px 7px; 
+  border-radius: 8px; 
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -235,8 +288,19 @@ a:hover {
   }
 }
 
-/* Responsive design for screens smaller than 641px */
-@media screen and (width < 641px) {
+/* Responsive design for screens smaller than 1280px */
+@media screen and (width < 1280px) {
+  .projects-grid {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 2rem;
+  }
+}
+
+/* Responsive design for screens smaller than 768px */
+@media screen and (width < 768px) {
   .page-grid {
     flex-direction: column;
   }
@@ -274,5 +338,12 @@ a:hover {
     padding: 0;
     margin: 0;
     flex: 1;
+  }
+  .projects-grid {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 2rem;
   }
 }

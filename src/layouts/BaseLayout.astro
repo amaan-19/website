@@ -1,8 +1,8 @@
 ---
-// @ts-ignore
-import '../styles/global.css';
-import Analytics from '@vercel/analytics/astro';
+import "../styles/global.css";
+
 import Sidebar from "../components/Sidebar.astro";
+import MainContent from "../components/MainContent.astro";
 
 const { pageTitle } = Astro.props;
 ---
@@ -10,29 +10,25 @@ const { pageTitle } = Astro.props;
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Mono:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Mono:ital,wght@0,300..700;1,300..700&display=swap');
+    </style>
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <!-- @ts-ignore -->
-    <Analytics />
-    <title>{"amaan khan | " + pageTitle}</title>
+    <title>{"amaan khan"}</title>
   </head>
   <body>
     <div class="page-grid">
+      <div id="empty-column-1"></div>
       <Sidebar />
-      <div id="main-content" class="main-content">
-        <h1>{pageTitle}</h1>
+      <div id="empty-column-2"></div>
+      <MainContent pageTitle={pageTitle}>
         <slot />
-      </div>
+      </MainContent>
+      <div id="empty-column-3"></div>
     </div>
     <script>
-      window.addEventListener('pageshow', (event) => {
-        if (event.persisted) {
-          window.location.reload();
-        }
-      });
+      import "../scripts/page-reloader";
       import "../scripts/menu";
       import "../scripts/content-resizer";
     </script>

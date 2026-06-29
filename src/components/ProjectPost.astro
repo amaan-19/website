@@ -1,13 +1,14 @@
 ---
-const { title, url } = Astro.props;
+const { title, url, tags, description } = Astro.props;
+import "../styles/global.css";
 ---
 
-<li class="card">
+<li class="card" id="card">
     <a href={url}>{title}</a>
-    <p class="blog-post-description">{Astro.props.description}</p>
-    <div class="card-tags">
-        {Astro.props.tags?.map((tag: string) => (
-            <span class="tag">{tag}</span>
+    <p class="blog-post-description">{description}</p>
+    <div class:list={["card-tags", { "no-border-top": !tags || tags.length === 0 }]}>
+        {tags?.map((tag: string) => (
+                <span class="tag">{tag}</span>
         ))}
     </div>
 </li>
